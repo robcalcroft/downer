@@ -1,0 +1,47 @@
+@import "compass/reset";
+@import "compass/layout/sticky-footer";
+@import url("http://fonts.googleapis.com/css?family=Dosis:300,400,500");
+
+@include sticky-footer(25px, ".main", ".main-push", "footer");
+
+$main: rgb(227,50,74);
+$main-text: white;
+
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	color: $main-text;
+	font-family: Dosis;
+	background: rgb(20,21,26);
+	text-align: center;
+}
+
+.main {
+	padding-top: 150px;
+	font-size: 400%;
+}
+
+.title {
+	padding-bottom: 30px;
+}
+
+input.link {
+	width: 60%;
+	height: 2.5em;
+	border: 0;
+	padding: 1em;
+	font-size: 40%;
+	background: $main;
+	color: $main-text;
+	font-family: inherit;
+	text-align: inherit;
+	&:focus { outline: 0; }
+}
+
+footer {
+	font-family: arial;
+	font-size: 90%;
+	color: rgba($main-text, .4);
+}
