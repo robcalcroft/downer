@@ -3,7 +3,7 @@ var app     = express();
 var fs      = require('fs');
 var request = require('request');
 var apiKey  = fs.readFileSync('sc-api-key', 'utf8');
-var port    = 8005;
+var port    = 8002;
 
 app.use(express.static('src/'));
 
