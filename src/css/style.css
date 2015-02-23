@@ -99,8 +99,13 @@ a:visited {
 }
 
 .main {
-  padding-top: 150px;
+  padding-top: 16%;
   font-size: 400%;
+}
+@media screen and (max-height: 900px) {
+  .main {
+    padding-top: 14%;
+  }
 }
 
 .title {
@@ -142,13 +147,14 @@ button {
   margin: 0 auto;
   background: transparent;
   border: 2px solid white;
-  padding: 7.5px 15px;
+  padding: 5px 30px;
   color: white;
   font-size: 45%;
 }
 button:hover {
   background: #e3324a;
   border-color: #e3324a;
+  cursor: pointer;
 }
 button:focus {
   outline: 0;

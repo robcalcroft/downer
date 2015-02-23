@@ -32,8 +32,11 @@ a {
 }
 
 .main {
-	padding-top: 150px;
+	padding-top: 16%;
 	font-size: 400%;
+	@media screen and (max-height: 900px) {
+		padding-top: 14%;
+	}
 }
 
 .title {
@@ -66,12 +69,13 @@ button {
 	margin: 0 auto;
 	background: transparent;
 	border: 2px solid $main-text;
-	padding: 7.5px 15px;
+	padding: 5px 30px;
 	color: $main-text;
 	font-size: 45%;
 	&:hover {
 		background: $main;
 		border-color: $main;
+		cursor: pointer;
 	}
 	&:focus {
 		outline: 0;
