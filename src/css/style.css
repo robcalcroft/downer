@@ -51,7 +51,7 @@ a img {
   border: none;
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
 
@@ -115,6 +115,40 @@ input.link {
 }
 input.link:focus {
   outline: 0;
+}
+
+button {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  font-family: inherit;
+  margin: 0 auto;
+  background: transparent;
+  border: 2px solid white;
+  padding: 7.5px 15px;
+  color: white;
+  font-size: 45%;
+}
+button:hover {
+  background: #e3324a;
+  border-color: #e3324a;
+}
+button:focus {
+  outline: 0;
+}
+button.download {
+  margin: 20px auto;
+  display: block;
+}
+button.disabled {
+  border-color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.4);
 }
 
 footer {

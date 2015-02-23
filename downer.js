@@ -41,15 +41,15 @@ app.get('/api/soundcloud/download', function(req, res) {
 		
 		// Set headers to force download of file.
 		res.setHeader("Content-Type","application/octet-stream");
-       	res.setHeader("Content-Transfer-Encoding", "Binary");
-        res.setHeader("Content-disposition", "attachment; filename=\"" + data.title + ".mp3\"");
+		res.setHeader("Content-Transfer-Encoding", "Binary");
+		res.setHeader("Content-disposition", "attachment; filename=\"" + data.title + ".mp3\"");
 
-        // Create the stream URL
-        streamURL = data.stream_url + "?client_id=" +apiKey;
+		// Create the stream URL
+		streamURL = data.stream_url + "?client_id=" +apiKey;
         
-	// Request the file and pipe it to
-        // the response.
-        request.get(streamURL).pipe(res);
+		// Request the file and pipe it to
+		// the response.
+		request.get(streamURL).pipe(res);
 	})
 })
 

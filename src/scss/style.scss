@@ -1,4 +1,5 @@
 @import "compass/reset";
+@import "compass/css3";
 @import "compass/layout/sticky-footer";
 @import url("http://fonts.googleapis.com/css?family=Dosis:300,400,500");
 
@@ -6,6 +7,7 @@
 
 $main: rgb(227,50,74);
 $main-text: white;
+$main-text-faded: rgba($main-text, .4);
 
 * {
 	box-sizing: border-box;
@@ -29,7 +31,7 @@ html, body {
 
 .subtitle {
 	font-size: 30%;
-	color: rgba($main-text, .4);
+	color: $main-text-faded;
 	padding-bottom: 15px;
 }
 
@@ -46,8 +48,35 @@ input.link {
 	&:focus { outline: 0; }
 }
 
+button {
+	@include border-radius();
+	@include transition(.3s);
+	font-family: inherit;
+	margin: 0 auto;
+	background: transparent;
+	border: 2px solid $main-text;
+	padding: 7.5px 15px;
+	color: $main-text;
+	font-size: 45%;
+	&:hover {
+		background: $main;
+		border-color: $main;
+	}
+	&:focus {
+		outline: 0;
+	}
+	&.download {
+		margin: 20px auto;
+		display: block;
+	}
+	&.disabled {
+		border-color: $main-text-faded;
+		color: $main-text-faded;
+	}
+}
+
 footer {
 	font-family: arial;
 	font-size: 90%;
-	color: rgba($main-text, .4);
+	color: $main-text-faded;
 }
