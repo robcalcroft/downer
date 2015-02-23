@@ -24,7 +24,13 @@ html, body {
 }
 
 .title {
-	padding-bottom: 30px;
+	padding-bottom: 15px;
+}
+
+.subtitle {
+	font-size: 30%;
+	color: rgba($main-text, .4);
+	padding-bottom: 15px;
 }
 
 input.link {

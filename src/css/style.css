@@ -51,7 +51,7 @@ a img {
   border: none;
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
 
@@ -93,7 +93,13 @@ html, body {
 }
 
 .title {
-  padding-bottom: 30px;
+  padding-bottom: 15px;
+}
+
+.subtitle {
+  font-size: 30%;
+  color: rgba(255, 255, 255, 0.4);
+  padding-bottom: 15px;
 }
 
 input.link {

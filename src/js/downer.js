@@ -29,6 +29,9 @@ downer = {
 			swal("Error", "I don't support that site :(", "error");
 			return;
 		}
+		
+		// URL Encode the SC URL
+		value = encodeURIComponent(value);
 
 		// Set the src to be the API route
 		iframe.src = "/api/" + type + "/download?url=" + value;
