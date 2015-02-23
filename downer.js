@@ -7,15 +7,6 @@ var port    = 8002;
 
 app.use(express.static('src/'));
 
-app.get('*', function(req, res, next) {
-	if(!req.xhr) {
-		res.json({
-			status: 403,
-			message: "API can only be accessed via XHR"
-		}).status(403)
-	}
-})
-
 /**
  * Download the 128KBP version of the
  * requested soundcloud song
@@ -33,18 +24,18 @@ app.get('/api/soundcloud/download', function(req, res) {
 		// single song or user has provided
 		// link to e.g. artist account;
 		if(data.pop) {
-			res.json({
+			res.status(403).json({
 				status: 403,
 				message: "URL must link to a single track not an artist or other."
-			}).status(403)
+			})
 		}
 
 		// Check if the song is streamable
 		if(data.streamable === false) {
-			res.json({
+			res.status(404).json({
 				status: 404,
 				message: "Track not streamable."
-			}).status(404);
+			});
 			return;
 		}
 		
