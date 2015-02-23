@@ -3,7 +3,7 @@ var downer = downer || {};
 
 downer = {
 
-	urlRegex: /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/,
+	urlRegex: /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?(\?.+)?$/,
 
 	init: function() {
 		$(document).ready(downer.watcher);
@@ -26,8 +26,11 @@ downer = {
 		}
 
 		// Get the type of the request
-		if(/soundcloud/.test(value)) {
+		if(/soundcloud./.test(value)) {
 			type = "soundcloud";
+		}
+		else if(/youtube./.test(value)) {
+			type = "youtube";
 		}
 		else {
 			swal("Error", "I don't support that site :(", "error");
@@ -53,7 +56,7 @@ downer = {
 		var val = $(this).val();
 		var colors = {
 			"soundcloud.com": "#f70",
-			"www.youtube.com": "red"
+			"www.youtube.com": "#e52d27"
 		};
 
 		// Checks that we have a valid link

@@ -20,6 +20,17 @@ html, body {
 	text-align: center;
 }
 
+a {
+	color: inherit;
+	text-decoration: none;
+	&:hover {
+		color: $main-text;
+	}
+	&:visited {
+		color: inherit;
+	}
+}
+
 .main {
 	padding-top: 150px;
 	font-size: 400%;
@@ -76,7 +87,10 @@ button {
 }
 
 footer {
-	font-family: arial;
-	font-size: 90%;
+	font-family: helvetica;
+	font-weight: lighter;
+	font-size: 100%;
 	color: $main-text-faded;
 }
+
+.bottom-splitter { color: $main-text; }
