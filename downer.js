@@ -46,7 +46,12 @@ app.get('/api/soundcloud/download', function(req, res) {
 		res.setHeader("Content-disposition", "attachment; filename=\"" + data.title + ".mp3\"");
 
 		// Create the stream URL
-		streamURL = data.stream_url + "?client_id=" +apiKey;
+		if(data.stream_url.indexOf('?') === -1) {
+			streamURL = data.stream_url + "?client_id=" +apiKey;
+		}
+		else {
+			streamURL = data.stream_url + "&client_id=" +apiKey;
+		}
         
 		// Request the file and pipe it to
 		// the response.

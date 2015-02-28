@@ -49,7 +49,9 @@ downer = {
 		// Append the iframe to the body which will call the API and start the download
 		$('body').append(iframe);
 
-		$('button.download').append("ing ...");
+		$('button.download').append("ing ...").delay(3000).queue(function() {
+			$(this).html("Download");
+		})
 	},
 
 	colorChanger: function() {
